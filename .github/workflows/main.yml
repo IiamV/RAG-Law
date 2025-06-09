@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Create .env file
-        run: echo "API_KEY=${{ secrets.ENV_CONTENT }}" > .env
+        run: echo "$ENV_CONTENT" > .env
         env:
           ENV_CONTENT: ${{ secrets.ENV_CONTENT }}
       - name: Upload .env as artifact
